@@ -1,0 +1,32 @@
+MDBoxLayout:
+    orientation: 'vertical'
+
+    #scrollable list of book categories
+    MDScrollView:
+        MDList:
+            id: bookcategorylist
+            padding: 10
+
+    #textfield and button to add book categories
+    MDBoxLayout:
+        padding: 10
+        spacing: 10
+        size_hint_y: None
+        height: self.minimum_height
+        MDTextField:
+            id: inputbookcategory
+            hint_text: "Insert Book Category"
+            required: True
+            mode: "fill"
+            #set textfield width
+            size_hint_x: 0.6
+        MDRaisedButton:
+            text: "Add"
+            #button bg color
+            md_bg_color: "orange"
+            #if button is clicked then add book category to list
+            on_release: app.addnewbookcategory(inputbookcategory.text)
+
+    
+
+
